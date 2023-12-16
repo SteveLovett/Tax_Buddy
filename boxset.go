@@ -32,7 +32,7 @@ func boxset(m model, msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, nil
 }
 
-func (m model) boxsetView() {
+func boxsetView(m *model) {
 	// Is the cursor pointing at this choice?
 	for i, choice := range m.choices {
 		cursor := " " // no cursor

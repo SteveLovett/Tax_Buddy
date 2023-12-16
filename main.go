@@ -8,9 +8,9 @@ import (
 )
 
 type model struct {
-	prompt string
-	choices []string
-	cursor int
+	prompt   string
+	choices  []string
+	cursor   int
 	selected map[int]struct{}
 }
 
@@ -41,7 +41,7 @@ func main() {
 
 func initialModel() model {
 	return model{
-		choices: []string{"Buy carrots", "Buy broccoli", "Buy cabbage"},
+		choices:  []string{"US Address", "Foreign Address"},
 		selected: make(map[int]struct{}),
 	}
 }
@@ -57,7 +57,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 func (m model) View() string {
 	m.prompt = "Please enter the taxpayer's personal information:\n\n"
 
-	m.boxsetView()
+	mPointer := &m
+	boxsetView(mPointer)
 
 	m.prompt += "\nPress q to quit.\n"
 	return m.prompt
