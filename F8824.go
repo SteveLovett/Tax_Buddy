@@ -1,4 +1,4 @@
-package TaxPrepAssistant
+package main
 
 type F8824 struct {
 	// Form 8824 is used to report like-kind exchanges
